@@ -4,8 +4,4 @@ script: cd vision && make targettest && ./bin/TargetTest
 sudo: true
 before_install:
     - sudo apt-get update
-
-before_script:
-    - wget https://raw.githubusercontent.com/jayrambhia/Install-OpenCV/master/Ubuntu/opencv_latest.sh
-    - chmod +x opencv_latest.sh
-    - sudo ./opencv_latest.sh
+    - sudo apt-get -y install libopencv-dev cxxtest

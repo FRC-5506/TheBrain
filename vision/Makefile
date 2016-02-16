@@ -1,7 +1,7 @@
 config=`pkg-config --libs opencv`
 
 all:
-	g++ $(config) -Isrc src/main.cpp src/target.cpp src/vision.cpp $(config) -o bin/VisionTracking
+	g++ $(config) -std=c++0x -pthread -Iinclude/ -Isrc src/main.cpp src/client.cpp src/target.cpp src/vision.cpp $(config) -o bin/VisionTracking
 
 calibration:
 	g++ $(config) src/calibration.cpp $(config) -o bin/calibrate
